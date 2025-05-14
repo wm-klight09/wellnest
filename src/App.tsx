@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import theme from './theme';
+import BottomNav from './components/navigation/BottomNavigation';
+import Home from './pages/Home';
+import MoodPage from './pages/Mindfulness';
+import Wellness from './pages/Wellness';
+import Registration from './components/auth/Registration';
+import MentalHealthQuiz from './components/quiz/MentalHealthQuiz';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <div style={{ paddingBottom: '56px' }}> {/* Space for bottom navigation */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/mood" element={<MoodPage />} />
+            <Route path="/wellness" element={<Wellness />} />
+            <Route path="/register" element={<Registration />} />
+            <Route path="/quiz" element={<MentalHealthQuiz />} />
+          </Routes>
+          <BottomNav />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

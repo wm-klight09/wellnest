@@ -1,0 +1,168 @@
+.results-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.results-container h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.results-intro {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.recommendation-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  border-top: 4px solid;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-5px);
+}
+
+.priority-high {
+  border-color: #e74c3c;
+}
+
+.priority-medium {
+  border-color: #f39c12;
+}
+
+.priority-low {
+  border-color: #2ecc71;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.priority-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.priority-high .priority-badge {
+  background: #fde8e7;
+  color: #e74c3c;
+}
+
+.priority-medium .priority-badge {
+  background: #fef3e0;
+  color: #f39c12;
+}
+
+.priority-low .priority-badge {
+  background: #e8f6ef;
+  color: #2ecc71;
+}
+
+.recommendation-card p {
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+.recommendation-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendation-card li {
+  padding: 0.5rem 0;
+  color: #2c3e50;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.recommendation-card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #3498db;
+}
+
+.next-steps {
+  background: #ebf5fb;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.next-steps h3 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.step-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-3px);
+}
+
+.step-card h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.step-card p {
+  color: #7f8c8d;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .results-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+} 
